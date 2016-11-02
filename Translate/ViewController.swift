@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var textToTranslate: UITextView!
+    
     @IBOutlet weak var translatedText: UITextView!
     
     //var data = NSMutableData()
@@ -25,8 +26,16 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func translate(_ sender: AnyObject) {
+    
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
+        textToTranslate.resignFirstResponder()
+        
+    }
+    
+    
+    @IBAction func translate(_ sender: AnyObject) {
         let str = textToTranslate.text
         let escapedStr = str?.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
         
@@ -37,6 +46,7 @@ class ViewController: UIViewController {
         let url = URL(string: urlStr)
         
         let request = URLRequest(url: url!)// Creating Http Request
+        //let session = URLSession.shared
         
         //var data = NSMutableData()var data = NSMutableData()
         
@@ -48,7 +58,10 @@ class ViewController: UIViewController {
         var result = "<Translation Error>"
         
         NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) { response, data, error in
+        //session.dataTask(with: request) { (data, response, error) -> Void in
             
+        
+        
             indicator.stopAnimating()
             
             if let httpResponse = response as? HTTPURLResponse {
@@ -61,6 +74,7 @@ class ViewController: UIViewController {
                         
                         result = responseData.object(forKey: "translatedText") as! String
                     }
+                    else{ print ("You're a shit programmer") }
                 }
                 
                 self.translatedText.text = result
@@ -68,5 +82,8 @@ class ViewController: UIViewController {
         }
         
     }
+
+  
+        
 }
 
