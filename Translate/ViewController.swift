@@ -8,18 +8,79 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
     
     @IBOutlet weak var textToTranslate: UITextView!
     
     @IBOutlet weak var translatedText: UITextView!
     
-    //var data = NSMutableData()
+    @IBOutlet weak var picker: UIPickerView!
+   
+    @IBOutlet weak var test: UILabel!
+    
+    
+    var langStr = " "
+    var outputLanguage = ["French", "Turkish", "Irish"]
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return outputLanguage.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return outputLanguage[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        picker.isHidden = true;
+        test.text = outputLanguage[row]
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        picker.delegate = self
+        picker.dataSource = self
+        
+        picker.isHidden=true
+        test.isHidden=true
+        
         
     }
+    
+    func getOutputLanguage() -> String{
+        if (test.text == "French"){
+            langStr = ("en|fr")
+        }
+        else if (test.text == "Turkish"){
+            langStr = ("en|tr")
+        }
+        else if(test.text == "Irish"){
+            langStr = ("en|ga")
+        }
+        
+        //default to french
+        else{
+            langStr = ("en|fr")
+            
+        }
+        print ("language is " + test.text!)
+        print ("Its actually " + langStr)
+        return langStr
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -29,7 +90,7 @@ class ViewController: UIViewController {
     
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+        picker.isHidden=false
         textToTranslate.resignFirstResponder()
         
     }
@@ -39,9 +100,11 @@ class ViewController: UIViewController {
         let str = textToTranslate.text
         let escapedStr = str?.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
         
-        let langStr = ("en|fr").addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-        
-        let urlStr:String = ("https://api.mymemory.translated.net/get?q="+escapedStr!+"&langpair="+langStr!)
+        //let langStr = ("en|fr").addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+        let langStr = getOutputLanguage().addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+
+        print ("The current language is " + langStr)
+        let urlStr:String = ("https://api.mymemory.translated.net/get?q="+escapedStr!+"&langpair="+langStr)
         
         let url = URL(string: urlStr)
         
