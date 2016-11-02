@@ -18,6 +18,18 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
    
     @IBOutlet weak var test: UILabel!
     
+    @IBOutlet var output: UIButton!
+    
+    @IBOutlet weak var translate: UIButton!
+   
+    
+    
+    @IBAction func buttonPressed(_ sender: AnyObject) {
+        
+        picker.isHidden=false
+    }
+    
+    
     
     var langStr = " "
     var outputLanguage = ["French", "Turkish", "Irish"]
@@ -48,6 +60,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         picker.isHidden=true
         test.isHidden=true
+        output.setTitle("French", for: UIControlState.normal)
+        
+        output.layer.cornerRadius = 4
+        textToTranslate.layer.cornerRadius = 4
+        translatedText.layer.cornerRadius = 4
+        translate.layer.cornerRadius = 4
         
         
     }
@@ -55,22 +73,29 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func getOutputLanguage() -> String{
         if (test.text == "French"){
             langStr = ("en|fr")
+            output.setTitle("French", for: UIControlState.normal)
+
         }
         else if (test.text == "Turkish"){
             langStr = ("en|tr")
-        }
+            output.setTitle("Turkish", for: UIControlState.normal)
+
+                    }
         else if(test.text == "Irish"){
             langStr = ("en|ga")
+            output.setTitle("Irish", for: UIControlState.normal)
+
         }
         
         //default to french
         else{
             langStr = ("en|fr")
+            output.setTitle("French", for: UIControlState.normal)
             
         }
         print ("language is " + test.text!)
         print ("Its actually " + langStr)
-        return langStr
+                return langStr
     }
     
     
@@ -90,7 +115,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        picker.isHidden=false
+        
         textToTranslate.resignFirstResponder()
         
     }
