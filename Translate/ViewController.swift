@@ -21,42 +21,33 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet var output: UIButton!
     
     @IBOutlet weak var translate: UIButton!
-   
     
-    
-    @IBAction func buttonPressed(_ sender: AnyObject) {
-        
-        picker.isHidden=false
-    }
-    
-    
+    var pickerData: [[String]] = [[String]]()
     
     var langStr = " "
-    var outputLanguage = ["French", "Turkish", "Irish"]
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return outputLanguage.count
+    
+    
+
+
+    
+    
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return outputLanguage[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        picker.isHidden = true;
-        test.text = outputLanguage[row]
-    }
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        picker.delegate = self
-        picker.dataSource = self
+        
+        
+        
+        
+        pickerData = [["English", "French", "Turkish"],
+                      ["French", "Turkish", "Irish"]]
+        
         
         picker.isHidden=true
         test.isHidden=true
@@ -68,7 +59,48 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         translate.layer.cornerRadius = 4
         
         
+        self.picker.delegate = self
+        self.picker.dataSource = self
+        
+
+        
     }
+
+    
+    
+    
+    @IBAction func buttonPressed(_ sender: AnyObject) {
+        
+        picker.isHidden=false
+    }
+    
+    
+    
+    //Number of rows
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData[component].count    }
+    
+    
+    // The data to return for the row and component (column) that's being passed in
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[component][row]
+    }
+    
+    
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 2
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        // This method is triggered whenever the user makes a change to the picker selection.
+        // The parameter named row and component represents what was selected.
+        picker.isHidden = true
+        
+    }
+    
+   
+    
     
     func getOutputLanguage() -> String{
         if (test.text == "French"){
@@ -107,10 +139,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     
 

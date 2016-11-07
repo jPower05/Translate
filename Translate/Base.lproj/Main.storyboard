@@ -31,11 +31,6 @@
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eTb-9v-M3y">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="zCf-qM-Qq5"/>
-                                </constraints>
-                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScG-Kc-quq">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -63,32 +58,39 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="115" id="q5H-fr-mQm"/>
                                 </constraints>
-                                <state key="normal" title="Translate"/>
+                                <state key="normal" title="Translate">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="translate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4us-Cs-3bp"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eTb-9v-M3y">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="99" id="uSf-HZ-shI"/>
+                                </constraints>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="0.67567093656060395" green="0.9467472935272897" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="eTb-9v-M3y" firstAttribute="trailing" secondItem="LaV-KV-DTJ" secondAttribute="trailing" id="0Nb-Fe-PZR"/>
+                            <constraint firstAttribute="bottom" secondItem="eTb-9v-M3y" secondAttribute="bottom" constant="158" id="3VP-ZC-lDq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ScG-Kc-quq" secondAttribute="trailing" constant="23" id="3oA-je-ZO8"/>
-                            <constraint firstItem="eTb-9v-M3y" firstAttribute="top" secondItem="LaV-KV-DTJ" secondAttribute="bottom" constant="16" id="CYu-kR-NGb"/>
+                            <constraint firstItem="eTb-9v-M3y" firstAttribute="leading" secondItem="LaV-KV-DTJ" secondAttribute="leading" id="4K6-eQ-8M6"/>
                             <constraint firstItem="dii-Vg-90N" firstAttribute="leading" secondItem="LaV-KV-DTJ" secondAttribute="leading" id="EKF-iB-Z4h"/>
-                            <constraint firstItem="eTb-9v-M3y" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="FpT-vx-1xZ"/>
                             <constraint firstItem="LaV-KV-DTJ" firstAttribute="top" secondItem="dii-Vg-90N" secondAttribute="bottom" constant="22" id="KTb-Eb-z3e"/>
                             <constraint firstAttribute="bottom" secondItem="ScG-Kc-quq" secondAttribute="bottom" constant="20" symbolic="YES" id="MGH-2h-OOW"/>
                             <constraint firstItem="Vbo-kL-Drm" firstAttribute="top" secondItem="mkR-Ls-F9N" secondAttribute="top" id="NDZ-VA-vCi"/>
                             <constraint firstItem="dii-Vg-90N" firstAttribute="top" secondItem="Vbo-kL-Drm" secondAttribute="bottom" constant="33" id="O6t-OF-uMK"/>
-                            <constraint firstItem="Tk9-7M-DEK" firstAttribute="top" secondItem="eTb-9v-M3y" secondAttribute="bottom" constant="37" id="RLL-Us-GMW"/>
-                            <constraint firstItem="eTb-9v-M3y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Sgk-ef-q2F"/>
+                            <constraint firstItem="eTb-9v-M3y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Sx9-eg-P3Q"/>
                             <constraint firstItem="mkR-Ls-F9N" firstAttribute="leading" secondItem="dii-Vg-90N" secondAttribute="leading" id="VzD-oB-IjR"/>
-                            <constraint firstItem="Tk9-7M-DEK" firstAttribute="centerX" secondItem="eTb-9v-M3y" secondAttribute="centerX" id="XDn-fg-Lve"/>
+                            <constraint firstItem="Tk9-7M-DEK" firstAttribute="top" secondItem="eTb-9v-M3y" secondAttribute="bottom" constant="66" id="YVo-bU-nMP"/>
                             <constraint firstItem="Vbo-kL-Drm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="bme-fA-qjF"/>
                             <constraint firstItem="dii-Vg-90N" firstAttribute="trailing" secondItem="LaV-KV-DTJ" secondAttribute="trailing" id="hUh-oV-f9o"/>
-                            <constraint firstItem="LaV-KV-DTJ" firstAttribute="trailing" secondItem="eTb-9v-M3y" secondAttribute="trailing" id="jXy-LL-f97"/>
                             <constraint firstItem="Vbo-kL-Drm" firstAttribute="leading" secondItem="mkR-Ls-F9N" secondAttribute="trailing" constant="83" id="l64-LI-vs0"/>
-                            <constraint firstAttribute="bottom" secondItem="eTb-9v-M3y" secondAttribute="bottom" constant="129" id="lbp-N7-ikv"/>
-                            <constraint firstItem="LaV-KV-DTJ" firstAttribute="leading" secondItem="eTb-9v-M3y" secondAttribute="leading" id="mW2-2L-ipe"/>
+                            <constraint firstItem="eTb-9v-M3y" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="q0N-zW-Rg1"/>
+                            <constraint firstItem="eTb-9v-M3y" firstAttribute="top" secondItem="LaV-KV-DTJ" secondAttribute="bottom" constant="8" symbolic="YES" id="qLd-Gj-y4c"/>
+                            <constraint firstItem="eTb-9v-M3y" firstAttribute="centerX" secondItem="Tk9-7M-DEK" secondAttribute="centerX" id="qn6-2W-vIl"/>
                             <constraint firstItem="Vbo-kL-Drm" firstAttribute="trailing" secondItem="dii-Vg-90N" secondAttribute="trailing" id="v50-s9-muy"/>
                             <constraint firstItem="Vbo-kL-Drm" firstAttribute="bottom" secondItem="mkR-Ls-F9N" secondAttribute="bottom" id="wIo-Bd-5Mn"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Tk9-7M-DEK" secondAttribute="bottom" constant="47" id="zFk-sw-aKd"/>
