@@ -22,9 +22,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     @IBOutlet weak var translate: UIButton!
     
-    
-    
-    
+        
     
 
 
@@ -142,7 +140,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         //let langStr = ("en|fr").addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
         let langStr = getOutputLanguage().addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-
+        
         print ("The current language is " + langStr)
         let urlStr:String = ("https://api.mymemory.translated.net/get?q="+escapedStr!+"&langpair="+langStr)
         
@@ -158,10 +156,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         var result = "<Translation Error>"
         
         NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) { response, data, error in
-        //session.dataTask(with: request) { (data, response, error) -> Void in
+            //session.dataTask(with: request) { (data, response, error) -> Void in
             
-        
-        
+            
+            
             EZLoadingActivity.hide(true, animated: true)
             
             if let httpResponse = response as? HTTPURLResponse {
@@ -183,6 +181,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                 self.translatedText.text = result
             }
         }
+        
         
     }
 
