@@ -22,9 +22,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     @IBOutlet weak var translate: UIButton!
     
-    var pickerData: [[String]] = [[String]]()
     
-    var langStr = " "
     
     
     
@@ -41,13 +39,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        
-        pickerData = [["English", "French", "Turkish"],
-                      ["French", "Turkish", "Irish"]]
-        
+        picker.delegate = self
+        picker.dataSource = self
         
         picker.isHidden=true
         test.isHidden=true
@@ -59,45 +52,38 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         translate.layer.cornerRadius = 4
         
         
-        self.picker.delegate = self
-        self.picker.dataSource = self
-        
-
-        
     }
-
     
     
     
     @IBAction func buttonPressed(_ sender: AnyObject) {
         
         picker.isHidden=false
+        textToTranslate.text = ""
     }
     
     
     
-    //Number of rows
+    var langStr = " "
+    var outputLanguage = ["French", "Turkish", "Irish"]
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData[component].count    }
-    
-    
-    // The data to return for the row and component (column) that's being passed in
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[component][row]
+        return outputLanguage.count
     }
     
-    
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 2
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return outputLanguage[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        // This method is triggered whenever the user makes a change to the picker selection.
-        // The parameter named row and component represents what was selected.
-        picker.isHidden = true
-        
+        picker.isHidden = true;
+        test.text = outputLanguage[row]
     }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
     
    
     
@@ -140,11 +126,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     
     
-    
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
+     
         textToTranslate.resignFirstResponder()
+       
         
     }
     
@@ -166,10 +153,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         //var data = NSMutableData()var data = NSMutableData()
         
-        let indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
-        indicator.center = view.center
-        view.addSubview(indicator)
-        indicator.startAnimating()
+        EZLoadingActivity.show("Loading...", disableUI: true)
         
         var result = "<Translation Error>"
         
@@ -178,7 +162,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             
         
         
-            indicator.stopAnimating()
+            EZLoadingActivity.hide(true, animated: true)
             
             if let httpResponse = response as? HTTPURLResponse {
                 if(httpResponse.statusCode == 200){
@@ -190,7 +174,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                         
                         result = responseData.object(forKey: "translatedText") as! String
                     }
-                    else{ print ("You're a shit programmer") }
+                    else{
+                        EZLoadingActivity.hide(false, animated: true)
+                    }
+                    
                 }
                 
                 self.translatedText.text = result
