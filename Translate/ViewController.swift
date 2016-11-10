@@ -54,7 +54,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let DestViewController : SecondViewController = segue.destination as! SecondViewController
+    }
     
     @IBAction func buttonPressed(_ sender: AnyObject) {
         

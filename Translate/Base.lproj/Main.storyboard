@@ -61,10 +61,19 @@
                                     <constraint firstAttribute="height" constant="99" id="uSf-HZ-shI"/>
                                 </constraints>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ob4-nT-dUQ">
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <state key="normal" title="-&gt;">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="IUn-RX-Cz9" kind="show" id="1Pg-LZ-qOX"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vbo-kL-Drm">
                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="130" id="qJ5-el-Fde"/>
+                                    <constraint firstAttribute="width" constant="120" id="g0N-JE-ehO"/>
                                 </constraints>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -73,38 +82,32 @@
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MMe-aJ-a3G"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ob4-nT-dUQ">
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <state key="normal" title="-&gt;">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" cyan="0.0052983639761805534" magenta="0.053165771567181455" yellow="0.96142649930595547" black="0.034684354026845637" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                         <constraints>
                             <constraint firstItem="eTb-9v-M3y" firstAttribute="trailing" secondItem="LaV-KV-DTJ" secondAttribute="trailing" id="0Nb-Fe-PZR"/>
-                            <constraint firstItem="dii-Vg-90N" firstAttribute="top" secondItem="Vbo-kL-Drm" secondAttribute="bottom" constant="33" id="1sC-84-EHk"/>
                             <constraint firstAttribute="bottom" secondItem="eTb-9v-M3y" secondAttribute="bottom" constant="158" id="3VP-ZC-lDq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ScG-Kc-quq" secondAttribute="trailing" constant="23" id="3oA-je-ZO8"/>
                             <constraint firstItem="eTb-9v-M3y" firstAttribute="leading" secondItem="LaV-KV-DTJ" secondAttribute="leading" id="4K6-eQ-8M6"/>
-                            <constraint firstItem="Ob4-nT-dUQ" firstAttribute="leading" secondItem="Vbo-kL-Drm" secondAttribute="trailing" constant="20" id="5A2-r4-LLR"/>
+                            <constraint firstItem="Vbo-kL-Drm" firstAttribute="leading" secondItem="mkR-Ls-F9N" secondAttribute="trailing" constant="24" id="DOY-M9-aaC"/>
                             <constraint firstItem="dii-Vg-90N" firstAttribute="leading" secondItem="LaV-KV-DTJ" secondAttribute="leading" id="EKF-iB-Z4h"/>
+                            <constraint firstItem="Vbo-kL-Drm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="FSx-Uj-kDv"/>
                             <constraint firstItem="LaV-KV-DTJ" firstAttribute="top" secondItem="dii-Vg-90N" secondAttribute="bottom" constant="22" id="KTb-Eb-z3e"/>
                             <constraint firstItem="Ob4-nT-dUQ" firstAttribute="trailing" secondItem="dii-Vg-90N" secondAttribute="trailing" id="LxV-bm-1Qp"/>
-                            <constraint firstItem="Vbo-kL-Drm" firstAttribute="leading" secondItem="mkR-Ls-F9N" secondAttribute="trailing" constant="17" id="MCj-kN-agu"/>
                             <constraint firstAttribute="bottom" secondItem="ScG-Kc-quq" secondAttribute="bottom" constant="20" symbolic="YES" id="MGH-2h-OOW"/>
-                            <constraint firstItem="Vbo-kL-Drm" firstAttribute="top" secondItem="mkR-Ls-F9N" secondAttribute="top" id="MNe-jJ-wIu"/>
                             <constraint firstItem="eTb-9v-M3y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Sx9-eg-P3Q"/>
-                            <constraint firstItem="Vbo-kL-Drm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="VO0-pm-52l"/>
                             <constraint firstItem="mkR-Ls-F9N" firstAttribute="leading" secondItem="dii-Vg-90N" secondAttribute="leading" id="VzD-oB-IjR"/>
+                            <constraint firstItem="dii-Vg-90N" firstAttribute="top" secondItem="Vbo-kL-Drm" secondAttribute="bottom" constant="33" id="W71-JJ-0Jy"/>
                             <constraint firstItem="Tk9-7M-DEK" firstAttribute="top" secondItem="eTb-9v-M3y" secondAttribute="bottom" constant="66" id="YVo-bU-nMP"/>
                             <constraint firstItem="dii-Vg-90N" firstAttribute="trailing" secondItem="LaV-KV-DTJ" secondAttribute="trailing" id="hUh-oV-f9o"/>
+                            <constraint firstItem="Vbo-kL-Drm" firstAttribute="bottom" secondItem="mkR-Ls-F9N" secondAttribute="bottom" id="lgL-tL-Myb"/>
+                            <constraint firstItem="Vbo-kL-Drm" firstAttribute="top" secondItem="mkR-Ls-F9N" secondAttribute="top" id="lgV-Ph-bJV"/>
+                            <constraint firstItem="Vbo-kL-Drm" firstAttribute="baseline" secondItem="Ob4-nT-dUQ" secondAttribute="baseline" id="lsQ-ER-pVL"/>
                             <constraint firstItem="eTb-9v-M3y" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="q0N-zW-Rg1"/>
                             <constraint firstItem="eTb-9v-M3y" firstAttribute="top" secondItem="LaV-KV-DTJ" secondAttribute="bottom" constant="8" symbolic="YES" id="qLd-Gj-y4c"/>
                             <constraint firstItem="eTb-9v-M3y" firstAttribute="centerX" secondItem="Tk9-7M-DEK" secondAttribute="centerX" id="qn6-2W-vIl"/>
-                            <constraint firstItem="Ob4-nT-dUQ" firstAttribute="baseline" secondItem="Vbo-kL-Drm" secondAttribute="baseline" id="u65-tU-fCc"/>
+                            <constraint firstItem="Ob4-nT-dUQ" firstAttribute="leading" secondItem="Vbo-kL-Drm" secondAttribute="trailing" constant="23" id="u6C-DY-9It"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Tk9-7M-DEK" secondAttribute="bottom" constant="47" id="zFk-sw-aKd"/>
-                            <constraint firstItem="Vbo-kL-Drm" firstAttribute="bottom" secondItem="mkR-Ls-F9N" secondAttribute="bottom" id="zvk-zw-jOf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2hx-XP-HqD"/>
@@ -121,6 +124,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1271.2" y="388.15592203898052"/>
+        </scene>
+        <!--SecondViewController-->
+        <scene sceneID="qCf-24-Rir">
+            <objects>
+                <viewController title="SecondViewController" id="IUn-RX-Cz9" customClass="SecondViewController" customModule="Translate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OfQ-Ph-VBQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="eSS-IY-xrF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2t9-R1-OJz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gm4-lv-9cL">
+                                <frame key="frameInset" minX="16" minY="28" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <state key="normal" title="&lt;-">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="48m-dS-XOz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cyan="0.0052983639759999999" magenta="0.053165771569999999" yellow="0.96142649930000001" black="0.034684354030000003" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Azj-O0-nYh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2085.5999999999999" y="387.25637181409297"/>
         </scene>
     </scenes>
 </document>

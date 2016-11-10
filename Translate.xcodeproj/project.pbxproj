@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B41A01F61DD4E02300DBF5D3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41A01F51DD4E02300DBF5D3 /* SecondViewController.swift */; };
 		B42050D21DD23E1B0081469E /* EZLoadingActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42050D11DD23E1B0081469E /* EZLoadingActivity.swift */; };
 		FFD2F9B71BD1101A00F54057 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD2F9B61BD1101A00F54057 /* AppDelegate.swift */; };
 		FFD2F9B91BD1101A00F54057 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD2F9B81BD1101A00F54057 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B41A01F51DD4E02300DBF5D3 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		B42050D11DD23E1B0081469E /* EZLoadingActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EZLoadingActivity.swift; sourceTree = "<group>"; };
 		FFD2F9B31BD1101A00F54057 /* Translate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Translate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD2F9B61BD1101A00F54057 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				FFD2F9BF1BD1101A00F54057 /* LaunchScreen.storyboard */,
 				FFD2F9C21BD1101A00F54057 /* Info.plist */,
 				B42050D11DD23E1B0081469E /* EZLoadingActivity.swift */,
+				B41A01F51DD4E02300DBF5D3 /* SecondViewController.swift */,
 			);
 			path = Translate;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B41A01F61DD4E02300DBF5D3 /* SecondViewController.swift in Sources */,
 				B42050D21DD23E1B0081469E /* EZLoadingActivity.swift in Sources */,
 				FFD2F9B91BD1101A00F54057 /* ViewController.swift in Sources */,
 				FFD2F9B71BD1101A00F54057 /* AppDelegate.swift in Sources */,
