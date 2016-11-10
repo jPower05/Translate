@@ -137,10 +137,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gm4-lv-9cL">
-                                <frame key="frameInset" minX="16" minY="28" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gm4-lv-9cL">
                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="8x6-Ro-pbJ"/>
+                                </constraints>
                                 <state key="normal" title="&lt;-">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -148,8 +149,21 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="48m-dS-XOz"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="table" translatesAutoresizingMaskIntoConstraints="NO" id="rwf-Oh-xaY">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="574" id="Qj7-Go-xSB"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" cyan="0.0052983639759999999" magenta="0.053165771569999999" yellow="0.96142649930000001" black="0.034684354030000003" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Gm4-lv-9cL" firstAttribute="top" secondItem="OfQ-Ph-VBQ" secondAttribute="bottom" constant="8" symbolic="YES" id="3fp-ks-UrT"/>
+                            <constraint firstItem="rwf-Oh-xaY" firstAttribute="trailing" secondItem="2t9-R1-OJz" secondAttribute="trailingMargin" id="Nhz-Qg-zpA"/>
+                            <constraint firstItem="Gm4-lv-9cL" firstAttribute="leading" secondItem="rwf-Oh-xaY" secondAttribute="leading" id="Qhj-Vg-vXo"/>
+                            <constraint firstAttribute="bottom" secondItem="rwf-Oh-xaY" secondAttribute="bottom" constant="20" symbolic="YES" id="Vwx-WI-73y"/>
+                            <constraint firstItem="rwf-Oh-xaY" firstAttribute="leading" secondItem="2t9-R1-OJz" secondAttribute="leadingMargin" id="ilN-Va-dtf"/>
+                            <constraint firstItem="rwf-Oh-xaY" firstAttribute="top" secondItem="OfQ-Ph-VBQ" secondAttribute="bottom" constant="53" id="lRo-8X-cEt"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Azj-O0-nYh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -157,4 +171,7 @@
             <point key="canvasLocation" x="2085.5999999999999" y="387.25637181409297"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="table" width="1242" height="2218"/>
+    </resources>
 </document>
