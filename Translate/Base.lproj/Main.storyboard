@@ -36,15 +36,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vbo-kL-Drm">
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MMe-aJ-a3G"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="English" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mkR-Ls-F9N">
                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <constraints>
@@ -70,33 +61,55 @@
                                     <constraint firstAttribute="height" constant="99" id="uSf-HZ-shI"/>
                                 </constraints>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vbo-kL-Drm">
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="qJ5-el-Fde"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MMe-aJ-a3G"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ob4-nT-dUQ">
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <state key="normal" title="-&gt;">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.67567093656060395" green="0.9467472935272897" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" cyan="0.0052983639761805534" magenta="0.053165771567181455" yellow="0.96142649930595547" black="0.034684354026845637" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                         <constraints>
                             <constraint firstItem="eTb-9v-M3y" firstAttribute="trailing" secondItem="LaV-KV-DTJ" secondAttribute="trailing" id="0Nb-Fe-PZR"/>
+                            <constraint firstItem="dii-Vg-90N" firstAttribute="top" secondItem="Vbo-kL-Drm" secondAttribute="bottom" constant="33" id="1sC-84-EHk"/>
                             <constraint firstAttribute="bottom" secondItem="eTb-9v-M3y" secondAttribute="bottom" constant="158" id="3VP-ZC-lDq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ScG-Kc-quq" secondAttribute="trailing" constant="23" id="3oA-je-ZO8"/>
                             <constraint firstItem="eTb-9v-M3y" firstAttribute="leading" secondItem="LaV-KV-DTJ" secondAttribute="leading" id="4K6-eQ-8M6"/>
+                            <constraint firstItem="Ob4-nT-dUQ" firstAttribute="leading" secondItem="Vbo-kL-Drm" secondAttribute="trailing" constant="20" id="5A2-r4-LLR"/>
                             <constraint firstItem="dii-Vg-90N" firstAttribute="leading" secondItem="LaV-KV-DTJ" secondAttribute="leading" id="EKF-iB-Z4h"/>
                             <constraint firstItem="LaV-KV-DTJ" firstAttribute="top" secondItem="dii-Vg-90N" secondAttribute="bottom" constant="22" id="KTb-Eb-z3e"/>
+                            <constraint firstItem="Ob4-nT-dUQ" firstAttribute="trailing" secondItem="dii-Vg-90N" secondAttribute="trailing" id="LxV-bm-1Qp"/>
+                            <constraint firstItem="Vbo-kL-Drm" firstAttribute="leading" secondItem="mkR-Ls-F9N" secondAttribute="trailing" constant="17" id="MCj-kN-agu"/>
                             <constraint firstAttribute="bottom" secondItem="ScG-Kc-quq" secondAttribute="bottom" constant="20" symbolic="YES" id="MGH-2h-OOW"/>
-                            <constraint firstItem="Vbo-kL-Drm" firstAttribute="top" secondItem="mkR-Ls-F9N" secondAttribute="top" id="NDZ-VA-vCi"/>
-                            <constraint firstItem="dii-Vg-90N" firstAttribute="top" secondItem="Vbo-kL-Drm" secondAttribute="bottom" constant="33" id="O6t-OF-uMK"/>
+                            <constraint firstItem="Vbo-kL-Drm" firstAttribute="top" secondItem="mkR-Ls-F9N" secondAttribute="top" id="MNe-jJ-wIu"/>
                             <constraint firstItem="eTb-9v-M3y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Sx9-eg-P3Q"/>
+                            <constraint firstItem="Vbo-kL-Drm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="VO0-pm-52l"/>
                             <constraint firstItem="mkR-Ls-F9N" firstAttribute="leading" secondItem="dii-Vg-90N" secondAttribute="leading" id="VzD-oB-IjR"/>
                             <constraint firstItem="Tk9-7M-DEK" firstAttribute="top" secondItem="eTb-9v-M3y" secondAttribute="bottom" constant="66" id="YVo-bU-nMP"/>
-                            <constraint firstItem="Vbo-kL-Drm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="bme-fA-qjF"/>
                             <constraint firstItem="dii-Vg-90N" firstAttribute="trailing" secondItem="LaV-KV-DTJ" secondAttribute="trailing" id="hUh-oV-f9o"/>
-                            <constraint firstItem="Vbo-kL-Drm" firstAttribute="leading" secondItem="mkR-Ls-F9N" secondAttribute="trailing" constant="83" id="l64-LI-vs0"/>
                             <constraint firstItem="eTb-9v-M3y" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="q0N-zW-Rg1"/>
                             <constraint firstItem="eTb-9v-M3y" firstAttribute="top" secondItem="LaV-KV-DTJ" secondAttribute="bottom" constant="8" symbolic="YES" id="qLd-Gj-y4c"/>
                             <constraint firstItem="eTb-9v-M3y" firstAttribute="centerX" secondItem="Tk9-7M-DEK" secondAttribute="centerX" id="qn6-2W-vIl"/>
-                            <constraint firstItem="Vbo-kL-Drm" firstAttribute="trailing" secondItem="dii-Vg-90N" secondAttribute="trailing" id="v50-s9-muy"/>
-                            <constraint firstItem="Vbo-kL-Drm" firstAttribute="bottom" secondItem="mkR-Ls-F9N" secondAttribute="bottom" id="wIo-Bd-5Mn"/>
+                            <constraint firstItem="Ob4-nT-dUQ" firstAttribute="baseline" secondItem="Vbo-kL-Drm" secondAttribute="baseline" id="u65-tU-fCc"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Tk9-7M-DEK" secondAttribute="bottom" constant="47" id="zFk-sw-aKd"/>
+                            <constraint firstItem="Vbo-kL-Drm" firstAttribute="bottom" secondItem="mkR-Ls-F9N" secondAttribute="bottom" id="zvk-zw-jOf"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="2hx-XP-HqD"/>
                     <connections>
+                        <outlet property="input" destination="mkR-Ls-F9N" id="gQz-YA-8aC"/>
                         <outlet property="output" destination="Vbo-kL-Drm" id="kKH-HU-oV8"/>
                         <outlet property="picker" destination="eTb-9v-M3y" id="Buc-fC-HJB"/>
                         <outlet property="test" destination="ScG-Kc-quq" id="7v2-F7-pYL"/>
@@ -107,7 +120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="332" y="388.15592203898052"/>
+            <point key="canvasLocation" x="1271.2" y="388.15592203898052"/>
         </scene>
     </scenes>
 </document>

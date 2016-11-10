@@ -23,8 +23,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var translate: UIButton!
     
         
+    @IBOutlet weak var input: UILabel!
     
-
+    
 
     
     
@@ -48,7 +49,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         textToTranslate.layer.cornerRadius = 4
         translatedText.layer.cornerRadius = 4
         translate.layer.cornerRadius = 4
-        
+        input.layer.cornerRadius = 4
+                
         
     }
     
@@ -118,7 +120,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     
     
-    
+
     
     
     
