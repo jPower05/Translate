@@ -141,54 +141,51 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBAction func translate(_ sender: AnyObject) {
         let str = textToTranslate.text
         let escapedStr = str?.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-        
-        //let langStr = ("en|fr").addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
         let langStr = getOutputLanguage().addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         
-        print ("The current language is " + langStr)
+        
         let urlStr:String = ("https://api.mymemory.translated.net/get?q="+escapedStr!+"&langpair="+langStr)
         
         let url = URL(string: urlStr)
         
-        let request = URLRequest(url: url!)// Creating Http Request
-        //let session = URLSession.shared
-        
-        //var data = NSMutableData()var data = NSMutableData()
+        //let request = URLRequest(url: url!)// Creating Http Request
+        let session = URLSession.shared
         
         EZLoadingActivity.show("Loading...", disableUI: true)
         
         var result = "<Translation Error>"
         
-        NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) { response, data, error in
-            //session.dataTask(with: request) { (data, response, error) -> Void in
-            
-            
+        //NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) { response, data, error in
+        
+        session.dataTask(with: url!){
+            (data, response, error) in
             
             EZLoadingActivity.hide(true, animated: true)
             
             if let httpResponse = response as? HTTPURLResponse {
                 if(httpResponse.statusCode == 200){
                     
-                    let jsonDict: NSDictionary!=(try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)) as! NSDictionary
+                    let jsonDict: NSDictionary = try! JSONSerialization.jsonObject(with: data!, options: []) as! NSDictionary
                     
                     if(jsonDict.value(forKey: "responseStatus") as! NSNumber == 200){
                         let responseData: NSDictionary = jsonDict.object(forKey: "responseData") as! NSDictionary
                         
                         result = responseData.object(forKey: "translatedText") as! String
                     }
-                    else{
-                        EZLoadingActivity.hide(false, animated: true)
-                    }
                     
                 }
-                
+            }
+            DispatchQueue.main.async {
+                EZLoadingActivity.hide(false, animated: true)
                 self.translatedText.text = result
             }
-        }
-        
-        
+        }.resume()
     }
+    
 
+            
+            
+    
   
         
 }
