@@ -148,16 +148,13 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         let url = URL(string: urlStr)
         
-        //let request = URLRequest(url: url!)// Creating Http Request
         let session = URLSession.shared
         
         EZLoadingActivity.show("Loading...", disableUI: true)
         
         var result = "<Translation Error>"
         
-        //NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) { response, data, error in
-        
-        session.dataTask(with: url!){
+                session.dataTask(with: url!){
             (data, response, error) in
             
             EZLoadingActivity.hide(true, animated: true)
